@@ -33,6 +33,3 @@ The goal of this project is to give an association a self-hosted, collaborative 
 
 🚧 Work in progress — this repository is being set up as part of the *Intro to Cloud* course.
 
-## Authors
-
-- JulesCinc
