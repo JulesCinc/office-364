@@ -1,10 +1,10 @@
 # office-364
 
-Collaborative workspace for an association → Local Nextcloud (with OnlyOffice) + Nextcloud as identity provider.
+Collaborative workspace for a school project → Local Nextcloud (with OnlyOffice) + Nextcloud as identity provider.
 
 ## Overview
 
-The goal of this project is to give an association a self-hosted, collaborative office suite, running locally, as an alternative to proprietary cloud offerings.
+The goal of this project is to give the school a self-hosted, collaborative office suite, running locally, as an alternative to proprietary cloud offerings.
 
 - **Nextcloud**: file storage, sharing, calendar, contacts and collaboration hub.
 - **OnlyOffice**: online editing of documents, spreadsheets and presentations, integrated into Nextcloud.
