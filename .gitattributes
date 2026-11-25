@@ -1,0 +1,5 @@
+# Les scripts shell et la configuration sont lus dans des conteneurs Linux :
+# fins de ligne LF, même sur un poste Windows.
+*.sh text eol=lf
+*.yml text eol=lf
+.env* text eol=lf

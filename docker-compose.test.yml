@@ -1,0 +1,25 @@
+# Surcharge réservée aux tests (tests/acceptance.sh) : permet de lancer la
+# pile sur un poste sans NFS ni reverse proxy (#6 et #7).
+# C'est la seule différence entre la pile de test et la pile de production :
+#   - le dossier de données est un volume local au lieu du partage NFS ;
+#   - le port HTTP est publié sur 127.0.0.1 uniquement ;
+#   - le domaine et le proxy ont des valeurs locales.
+# Nécessite Docker Compose >= 2.24.4 (balises !override et !reset).
+
+services:
+  nextcloud:
+    ports: !override
+      - "127.0.0.1:${TEST_HTTP_PORT:-18080}:80"
+    environment: &environnement-test
+      NEXTCLOUD_TRUSTED_DOMAINS: localhost
+      TRUSTED_PROXIES: 127.0.0.1
+      OVERWRITEPROTOCOL: http
+      OVERWRITECLIURL: http://localhost:${TEST_HTTP_PORT:-18080}
+
+  cron:
+    environment: *environnement-test
+
+volumes:
+  nextcloud_data:
+    driver: local
+    driver_opts: !reset {}
